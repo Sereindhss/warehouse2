@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<style>
+		*{
+	margin: 0;
+	padding: 0;
+}
+		body{
+			background-color: #16384c;
+		}
+		li{
+	list-style: none;
+}
+	.lunbo{
+			position: relative;
+			width:900px;
+			height: 500px;
+			margin:20px auto;
+			
+			box-shadow: 20px 30px 20px rgba(0,0,0,0.5);
+		}
+	.button{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			display: flex;
+			justify-content: space-between;
+			user-select: none;
+		}
+	#btn-left{
+	width: 30px;
+	height: 69px;
+	margin: 215.5px 0;
+	font-size: 30px;
+	color: white;
+	background-color:rgba(0,0,0,0.4);
+	line-height: 69px;
+	padding-left: 5px;
+	cursor: pointer;
+	opacity: 0;
+		}
+		#btn-right{
+	width: 26px;
+	height: 69px;
+	margin: 215.5px 0;
+	font-size: 30px;
+	color: white;
+	background-color:rgba(0,0,0,0.4);
+	line-height: 69px;
+	padding-left: 5px;
+	cursor: pointer;
+	opacity: 0;
+    }
+		.lunbo:hover #btn-left{
+	opacity: 1;
+		}
+		.lunbo:hover #btn-right{
+	opacity: 1;
+		}
+	.wenzi{
+			width: 900px;
+			height:400px;
+			margin: 100px auto;
+		
+		}
+		.biaoti{
+			width:200px;
+			height: 60px;
+			margin: 20px auto;
+			text-align: center;
+			line-height: 60px;
+			background-color:rgba(255,255,255,0.3);
+			box-shadow: 20px 20px 50px rgba(0,0,0,0.8);
+			border-top: 1.5px solid rgba(255,255,255,0.8);
+			border-left:  1.5px solid rgba(255,255,255,0.8);
+			border-radius:10px;
+			-moz-border-radius:10px;
+			-webkit-border-radius:10px;
+			font-size: 30px;
+			font-family:华文中宋,华文宋体,华文仿宋,宋体,方正姚体, Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+		}
+		.content{
+			width: 800px;
+			height: 300px;
+			margin: 20px auto;
+			background-color:rgba(255,255,255,0.3);
+			box-shadow: 20px 20px 50px rgba(0,0,0,0.8);
+			border-top: 1.5px solid rgba(255,255,255,0.8);
+			border-left:  1.5px solid rgba(255,255,255,0.8);
+			border-radius:5%;
+			-moz-border-radius:5%;
+			-webkit-border-radius:5%;
+			font-size: 20px;
+			font-family:华文中宋,华文宋体,华文仿宋,宋体,方正姚体, Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+		}
+		.content p{
+			display: block;
+			margin:50px 40px;
+			 text-indent: 2em;
+		}
+		.boxs{
+position: absolute;
+width:1518px;
+height: 50px;
+user-select: none;
+font-size: 40px;
+background-color: #16384c;
+}
+.boxs a{
+display:inline-block;
+width: 120px;
+height: 50px;
+line-height: 50px;
+border: 1px double #052288;
+border-radius:15px;
+-moz-border-radius:15px;
+-webkit-border-radius:15px;
+cursor: pointer;
+text-align: center;
+box-shadow:5px 5px 10px rgba(0,0,0,0.3);
+transition:.3s;
+text-decoration: none;
+color: #052288;
+background-color:rgba(255,255,255,0.1);	
+}
+.boxs a:hover{
+color:#000000;
+border-color: #FFF;color: #FFFFFF;
+transform: scale(1.25);
+}
+		
+	</style>
+	
+</head>
+
+<body>
+	<div class="lunbo">
+		<img src="1.jpg" alt="图片无法加载" style="width:100%; height:100%;display: flex;position: absolute;left: 0;transition: .2s" id="myImg">
+		<div class="button">
+		<div id="btn-left" onClick="change(1)">&laquo;</div>
+		<div id="btn-right" onClick="change(2)">&raquo;</div>
+		</div>
+	</div>
+	<div class="wenzi">
+	<div class="biaoti">
+		内容简述
+		</div>
+	<div class="content">
+		<p>时光代理人主要剧情是讲某家时光照相馆住着有特殊能力的人，主角程小时和陆光可以使用超能力进入照片的时光，完成乔苓接到的委托，帮助人们完成一些过去未尽的事情。
+两个拥有特异功能的年轻人陆光和程小时，他们俩一个可以通过过去拍摄的照片，预见拍照者在拍照后十二小时内的行为轨迹；另一个则可以穿越进照片，附身到拍摄者身上，两人可以跨越时空进行交流。
+在前提不改变过去历史事件的结果，以保证时间线的正常发展的原则下帮助人们完成一些过去未尽的愿望，填补曾经的遗憾。</p>
+		</div>
+	</div>
+<div class="boxs">
+<a style="margin: 0 579px 0 50px" href="w1.html">&laquo;</a>
+<a style="margin: 0 50px 0 581px" href="w3.html">&raquo;</a>
+</div>
+</body>
+	<script>
+function change(type) {
+var img = document.getElementById("myImg").src;
+var id = parseInt(img.substr(img.length - 5, 1));  
+if (type == 1) {
+id = (id - 1 + 4) % 4;
+} else {
+id = (id + 1) % 4;
+}
+document.getElementById("myImg").src = "img" + id + ".jpg";  
+}
+
+  var imgs = document.querySelector("img");
+  var isChanging = false;
+
+  function timer() {
+    let time = setInterval(function() {
+      if (!isChanging) {
+        change(2);
+      }
+    }, 2500);
+    return time;
+  }
+
+  let time = timer();
+
+  const lunbo = document.querySelector(".lunbo");
+  lunbo.addEventListener('mouseenter', function() {
+    clearInterval(time)
+  });
+  lunbo.addEventListener('mouseleave', function() {
+    clearInterval(time);
+    time = timer();
+  });
+
+</script>
+</html>

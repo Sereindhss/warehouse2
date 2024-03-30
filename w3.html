@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<style>
+	*{
+	margin: 0;
+	padding: 0;
+}
+		body{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: #16384c;
+		}
+		.container{
+			position: relative;
+			width: 1100px;
+			height: 300px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+			padding: 30px;
+		}
+		.container .item{
+			position: relative;
+			width: 250px;
+			max-width: 300px;
+			height: 215px;
+			margin: 30px 10px;
+			padding: 20px 15px;
+			background-color: aliceblue;
+			display: flex;
+			flex-direction: column;
+			
+			box-shadow: 0 5px 200px rgba(0,0,0,0.5);
+			transition: 0.3s ease-in-out;
+			
+		}
+		.container .item:hover{
+			height: 420px;
+		}
+		.container .item .imgbx{
+			position: relative;
+			width: 200px;
+			height: 260px;
+			top: -60px;
+			left: 20px;
+			z-index: 1;
+			
+		}
+		.container .item .imgbx img{
+			max-width: 200px;
+			height: 260px;
+			border-radius: 4px;
+			box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+		}
+		.container .item .content{
+			position: relative;
+			margin-top: -140px;
+			padding: 10px 15px;
+			text-align: center;
+			color: #111;
+			visibility: hidden;
+			opacity: 0;
+			transition: 0.3s ease-in-out;
+		}
+		.container .item:hover .content{
+			visibility: visible;
+			opacity: 1;
+			margin-top: -40px;
+			transition-delay: 0.3s;
+		}
+				.boxs{
+			position: absolute;
+			width: 1518px;
+			height: 50px;
+			bottom: 10px;
+			user-select: none;
+			font-size: 40px;
+		}
+		.boxs a{
+			display:inline-block;
+			width: 120px;
+			height: 50px;
+			line-height: 50px;
+			border: 1px double #052288;
+			border-radius:15px;
+			-moz-border-radius:15px;
+			-webkit-border-radius:15px;
+			cursor: pointer;
+			text-align: center;
+			box-shadow:5px 5px 10px rgba(0,0,0,0.3);
+			transition:.3s;
+			text-decoration: none;
+			color:  #052288;
+			background-color:rgba(255,255,255,0.1);	
+		}
+		.boxs a:hover{
+			color:#000000;
+			border-color: #FFF;color: #FFFFFF;
+			transform: scale(1.25);
+		}
+		.biaoti{
+			width: 240px;
+			height: 80px;
+			position: absolute;
+			margin: 0 auto;
+			bottom: 60px;
+			line-height: 80px;
+			text-align: center;
+			border: 2px solid #000;
+            border-radius:15px;
+			-moz-border-radius:15px;
+			-webkit-border-radius:15px;
+			font-size: 50px;
+			font-family:华文中宋,华文宋体,华文仿宋,宋体,方正姚体, Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+		}
+		.name{
+			font-size: 40px;
+			font-family:华文行楷,华文中宋,华文宋体,华文仿宋,宋体,方正姚体, Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+		}
+		.wen{
+			font-family:华文中宋,华文宋体,华文仿宋,宋体,方正姚体, Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		    <div class="item">
+				<div class="imgbx"><img src="ch.jpg" alt="图片无法加载"></div>
+			   <div class="content">
+				<div class="name">程小时</div>
+				<div class="wen">时光照相馆老板，“时光代理人”计划执行者。可以进入照片世界，魂穿照片拍摄者。</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="imgbx"><img src="lu.jpg" alt="图片无法加载"></div>
+			   <div class="content">
+				<div class="name">陆光</div>
+				<div class="wen">时光照相馆合伙人，“时光代理人”计划观察者。可以连接程小时的记忆，指挥程小时行动。</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="imgbx"><img src="qiao.jpg" alt="图片无法加载"></div>
+			   <div class="content">
+				<div class="name">乔苓</div>
+				<div class="wen">程小时的发小兼房东。以中介身份为照相馆承接“时光代理”委托。</div>
+				</div>
+			</div>
+		
+	</div>
+	<div class="biaoti">人物介绍</div>
+	<div class="boxs">
+	<a style="margin: 0 579px 0 50px;" href="w2.html">&laquo;</a>
+	<a style="margin: 0 50px 0 581px;display: none">&raquo;</a>
+</div>
+</body>
+</html>

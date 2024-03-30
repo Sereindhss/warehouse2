@@ -1,0 +1,326 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<style>
+		*{
+	margin: 0;
+	padding: 0;
+}
+		body{
+			background-color: #16384c;
+		}
+		.b{
+			background-color: antiquewhite;
+			overflow: hidden;
+			background-color: #16384c;
+			height:600px;
+		}
+		.container{
+			width:800px;
+			height:480px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform:translateX(-50%) translateY(-56%);
+			padding: 50px;
+			box-shadow: 0 30px 50px grey;
+		}
+		#slide{
+			width:100%;
+			margin-top: 50px;
+		}
+		.item{
+			width: 200px;
+			height: 300px;
+			background-position: 50% 50%;
+			display: inline-block;
+			background-size: cover;
+			position: absolute;
+			top: 50%;
+			margin-top: -150px;
+			border-radius:20px;
+			-moz-border-radius:20px;
+			-webkit-border-radius:20px;
+			box-shadow: 0 30px 50px grey;
+			transition: .5s;
+		}
+		.item:nth-child(1),
+		.item:nth-child(2){
+			top: 0;
+			left: 0;
+			margin-top: 0;
+			border-radius:0px;
+			-moz-border-radius:0px;
+			-webkit-border-radius:0px;
+			box-shadow: none;
+			width: 100%;
+			height: 100%;
+		}
+		.item:nth-child(3){
+			left:45%;
+		}
+		.item:nth-child(4){
+			left: calc(68%);
+		}
+		.item:nth-child(5){
+			left:calc(91%);
+		}
+		.item:nth-child(n+6){
+			left: calc(110%);
+			opacity: 0;
+		}
+		.content{
+			width: 300px;
+			left: 100px;
+			top: 50%;
+			transform: translateY(-50%);
+			font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+			color: #eee;
+			position:absolute;
+			display: none;
+			opacity: 0;
+	        animation: showcontent 1s ease-in-out 1 forwards;
+		}
+		.item:nth-child(2) .content {
+		display: block;
+		}
+		.name{
+			font-size: 40px;
+			font-weight: bold;
+			font-style: italic;
+			font-family: 方正姚体,"Helvetica Neue", Helvetica, sans-serif,Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif"
+		}
+		@keyframes showcontent{
+			from{
+				opacity: 0;
+				transform: translateY(100px);
+				filter: blur(20px);
+			}to{
+				opacity: 1;
+				transform: translateY(0);
+				filter: blur(0);
+			}
+		}
+		.buttons{
+			width: 100%;
+			position: absolute;
+			bottom: 50px;
+			text-align: center;
+			
+		}
+		.button1{
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			background-color:rgba(255,255,255,0.4);
+			color:#FFFFFF;
+			text-align: center;
+			border-radius:50%;
+			-moz-border-radius:50%;
+			-webkit-border-radius:50%;
+			font-size: 25px;
+			font-weight: bold;
+			border: 1px solid #555;
+			margin: 0 50px;
+			transition:.5s;		
+            user-select: none;				
+		}
+		.button1:hover{
+			cursor: pointer;
+			background-color: #ccc;
+			
+		}
+		.boxs{
+			position: absolute;
+			width: 1518px;
+			height: 50px;
+			margin-top:10px;
+			user-select: none;
+			font-size: 40px;
+		}
+		.boxs a{
+			display:inline-block;
+			width: 120px;
+			height: 50px;
+			line-height: 50px;
+			border: 1px double #052288;
+			border-radius:15px;
+			-moz-border-radius:15px;
+			-webkit-border-radius:15px;
+			cursor: pointer;
+			text-align: center;
+			box-shadow:5px 5px 10px rgba(0,0,0,0.3);
+			transition:.3s;
+			text-decoration: none;
+			color: #052288;
+			background-color:rgba(255,255,255,0.1);	
+		}
+		.boxs a:hover{
+			color:#000000;
+			border-color: #FFF;color: #FFFFFF;
+			transform: scale(1.25);
+		}
+		.bx{
+			
+			width:1200px;
+			height:300px;
+			margin:100px auto;
+		    background-color:rgba(255,255,255,0.3);
+			box-shadow: 20px 20px 50px rgba(0,0,0,0.8);
+			border-top: 1.5px solid rgba(255,255,255,0.8);
+			border-left:  1.5px solid rgba(255,255,255,0.8);
+			border-radius:10px;
+			-moz-border-radius:10px;
+			-webkit-border-radius:10px;
+		}
+		.biaoti{
+			float: left;
+			background-color: antiquewhite;
+			width: 200px;
+			height: 100px;
+			margin: 100px 50px;
+			line-height: 100px;
+			text-align: center;
+			border-radius:20px;
+			-moz-border-radius:20px;
+			-webkit-border-radius:20px;
+			background-color:rgba(255,255,255,0.4);
+			font-size: 30px;
+			font-family:华文行楷,华文中宋,华文宋体,华文仿宋,宋体,方正姚体, Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+		}
+		.zi{
+			float: left;
+			width:800px;
+			height:150px;
+			margin:50px 25px;
+			padding: 23px;
+			border: 2px dotted #FFFFFF;
+			border-radius:15px;
+			-moz-border-radius:15px;
+			-webkit-border-radius:15px;
+			background-color:rgba(255,255,255,0.2);
+			font-size:20px;
+			font-family:华文中宋,华文宋体,华文仿宋,宋体,方正姚体, Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+		}
+		.biao{
+			width: 240px;
+			height: 80px;
+			display:inline-block;
+			margin: 10px 637px;
+			bottom: 60px;
+			line-height: 80px;
+			text-align: center;
+			border: 2px solid #000;
+            border-radius:15px;
+			-moz-border-radius:15px;
+			-webkit-border-radius:15px;
+			font-size: 50px;
+			font-family:华文中宋,华文宋体,华文仿宋,宋体,方正姚体, Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	</style>
+	
+</head>
+
+<body>
+	<div class="b">
+	<div class="container">
+	    <div id="slide">
+		    <div class="item" style="background-image: url(emma.jpg)">
+			   <div class="content">
+				<div class="name">EMMA</div>
+				</div>
+			</div>
+			<div class="item" style="background-image: url(mifang.jpg)">
+			   <div class="content">
+				<div class="name">秘方</div>
+				</div>
+			</div>
+			<div class="item" style="background-image: url(ying.jpg)">
+			   <div class="content">
+				<div class="name">只许输，不准赢</div>
+				</div>
+			</div>
+			<div class="item" style="background-image: url(gaobai.jpg)">
+			   <div class="content">
+				<div class="name">告白</div>
+				</div>
+			</div>
+			<div class="item" style="background-image: url(gaobie.jpg)">
+			   <div class="content">
+				<div class="name">告别</div>
+				</div>
+			</div>
+			<div class="item" style="background-image: url(xunzi.jpg)">
+			   <div class="content">
+				<div class="name">寻子</div>
+				</div>
+			</div>
+		</div>
+		<div class="buttons">
+		    <div class="button1">&lt;</div>
+			<div class="button1">&gt;</div>
+		</div>
+	</div>
+
+</div>
+	<div class="bx">
+	<div class="biaoti">EMMA</div>
+	<div class="zi">主人公 Emma 在职场中被上司猥亵、压榨和污蔑导致被挨打，最终 Emma 压力过大而跳河自杀。但程小时的魂穿改变了 Emma 去世的过程：由于善良的程小时替她回了妈妈的微信，回家后的 Emma 看到了桌子上有妈妈做好的春卷，被子也换成了厚的，于是她急忙去找在赶火车的父母，但赶路的途中遇到了刘旻……最后还是被其他异能者操控身体跳崖自杀了。</div>
+	</div>
+	<div class="bx">
+	<div class="zi">委托人是一位人到中年的精英女性予夏。她和其好朋友林贞大学毕业后起开了家生意红火的面馆，镇馆之面叫女寝那一碗。由于林贞要拆伙，所以予夏得抢在林贞行动前取得面馆的配方。程小时通过两人刚开店时拍的照片魂穿予夏寻找秘方，发现她俩刚开始关系非常美好。
+机缘巧合之下，程小时魂穿到林贞身上，这才发现所谓的秘方来自予夏的故乡。林贞一直没有变，变的是予夏，为了赚钱，她已经太久太久没回过家乡，也早就忘了故乡香料的味道。幸好故事的最后予夏选择了去找林贞。</div>
+	<div class="biaoti">秘方</div>
+	</div>
+	<div class="bx">
+	<div class="biaoti" style="margin:100px 25px;width: 250px ">只许输，不准赢</div>
+	<div class="zi">委托人陈潇曾经是校篮球队的替补兼校报摄影记者，他中学时代的遗憾，是最后一场篮球比赛他们输掉了、错过初恋、最后还和母亲大吵了一架。所以委托人想给过去的他们各自带几句话，来弥补留下的遗憾。于是程小时进入照片，进行了一场篮球比赛。</div>
+	</div>
+	<div class="bx">
+	<div class="zi">篮球队在程小时的帮助下赢得了比赛，但是最终的结果却没有发生改变。在快到陆鸿斌家时他们遇到了陆鸿斌的妹妹刘萌。而刘萌就是委托人的初恋，三个人相互之间拍了照。最后他们把陆鸿斌安全送回家，之后在刘萌送程小时的路上 他正好把第二个任务完成了，回到委托人的家中与母亲完成了第三个任务，正当程小时准备退出相片时突然知道那个重要的节点就是他们都会死于地震中。所以不管之前改变了多少，最后的结果都不会改变。</div>
+	<div class="biaoti">告白</div>
+	</div>
+	<div class="bx">
+	<div class="biaoti">告别</div>
+	<div class="zi">丰川县发生了地震，地震还引发了山体垮塌等其他自然灾害。程小时知道了所有人都会死于地震，不顾陆光的反对想救他们。但是没有人相信他，人们问他为什么。他也不能说，最后他只能说是杂志上写的玛雅人预言。程小时遭到嘲笑，程小时无奈的回去。程小时恳求陆光帮他救妈妈，但是最后还是没有救下。陈潇妈妈救下了陈潇，妈妈对他说道只要妈妈在，你就不会有事。经过这件事后陆光和程小时决定暂时停业，休息一下。</div>
+	</div>
+	<div class="bx">
+	<div class="zi">豆豆爸爸来到店里乞求他们帮帮他找儿子，他们找来当时的一段监控录像。程小时进入录像，之后程小时看到了带走豆豆的人。但在追的途中遇到了过去的乔苓，为了防止改变过去程小时避开了于是跟丢了豆豆。亮哥在查找照片时程小时发现了豆豆在案发当天拍的照片，程小时进入照片，进入豆豆的身体之后被人贩子用迷药迷晕。程小时醒来后发现人贩子在睡觉，偷偷找到了人贩子的身份证记下来。成功找回了豆豆。</div>
+	<div class="biaoti">寻子</div>
+	</div>
+	<div class="biao">剧情详析</div>
+<div class="boxs">
+	<a style="margin: 0 579px 0 50px;opacity: 0;cursor:default">&laquo;</a>
+	<a style="margin: 0 50px 0 581px;" href="w2.html">&raquo;</a>
+</div>
+</body>
+	<script>
+
+	let bo=true;
+	function _move(){
+		let lists=document.querySelectorAll('#slide .item');
+		if (bo){
+			document.querySelector('#slide').appendChild(lists[0]);
+		}else{
+		document.querySelector('#slide').prepend(lists[lists.length-1]);
+		}
+	}
+	let timer=setInterval(_move,3000);
+	document.querySelector('.container').addEventListener('mouseover', function(event){
+		clearInterval(timer);
+	});
+	document.querySelector('.container').addEventListener('mouseout', function(event){
+		timer=setInterval(_move,3000);
+	});
+	document.querySelectorAll('.button1')[1].onclick=function(){
+
+		_move()
+	}
+	document.querySelectorAll('.button1')[0].onclick=function(){
+		bo=false;
+		_move()
+	}
+	</script>
+</html>
